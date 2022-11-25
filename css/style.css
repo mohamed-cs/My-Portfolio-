@@ -336,7 +336,7 @@ h5{
 }
 .project-img img {
     width: 100%;
-    height:1000px;
+    height:50%;
 } 
 .project-card:hover .project-img{
     opacity: 0.8;
@@ -436,6 +436,10 @@ h5{
     margin-bottom: 10px;
     color: white;
 }
+
+
+
+
 .cont-icon{
     position: relative;
     display: flex;
@@ -624,7 +628,7 @@ h5{
     .container-textes{
         position: relative;
         bottom: 70px;
-        top: 40%;
+        top: 15%;
         margin-top: 2.5rem;
     }
     .container-images{
@@ -635,3 +639,5 @@ h5{
     }
 }
 /* Fin Media Quires */
+
+
