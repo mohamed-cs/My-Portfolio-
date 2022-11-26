@@ -660,7 +660,7 @@ h5{
     display: none;
     position: absolute;
     background-color: var(--bgcolor-1);
-    min-width: 160px;
+    min-width: 80px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     
   }
