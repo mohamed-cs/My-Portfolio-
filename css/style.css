@@ -612,18 +612,10 @@ h5{
 }
 @media (max-width:468px){
     .home .container-images{
-        width: 60%;
-        height: 36%;
-        position: relative;
-        align-self: flex-end;
+        display:none ;
     } 
     .container-images img{
-        position: absolute;
-        bottom: 0;
-        left:110% ;
-        top:-150%;
-        transform: translateX(-50%);
-        transition: 1s;
+         display:none ;
     }
     .container-textes{
         position: relative;
