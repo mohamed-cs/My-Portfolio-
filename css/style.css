@@ -6,7 +6,8 @@
     --lightcolor:#ffffff;
     --bgcolor-1:#171a1c;
     --bgcolor-2:#22282a;
-    --padding:8%;
+    --padding:7%;
+    
 }
 
 
@@ -25,6 +26,8 @@ body{
     background-image: url("images/home1.png");
     scroll-behavior: smooth;
 }
+
+
 p{
     color: var(--seconderycolor);
     letter-spacing: 1px;
@@ -44,6 +47,10 @@ p{
 }
 span{
     color: var(--primarycolor);
+}
+.comp
+{
+    color:#04AA6D;
 }
 .logo {
     font-family: 'Agustina';
@@ -66,7 +73,7 @@ nav{
 }
 nav ul li {
     display: inline-block;
-    margin: 0.8rem 1.5rem;  
+    margin: 0.6rem 1.0rem;  
 }
 nav ul li a{
     text-decoration: none;
@@ -207,6 +214,40 @@ h5{
     text-align: center;
     transition: 0.7s;
 }
+
+.box-exp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+    justify-content: center;
+}
+.box-exp li 
+{
+    justify-content: center;
+    list-style: none;
+
+}
+.card-exp{
+    width: 80%;
+    height: auto;
+    background-color:var(--bgcolor-2);
+    border-radius: 20px;
+    padding: 1.3rem 1.3rem;
+    text-align: left;
+    transition: 1s;
+    display: inline-block;
+}
+.box-exp ul i 
+{
+    display: inline-block;
+    width: 30px;
+    font-size: 3.10rem;
+    color:var(--primarycolor);
+    margin-right: 60px;
+    vertical-align:50%;
+}
+
 .card p{
     margin-bottom: 40px;
 }
@@ -219,6 +260,13 @@ h5{
 .card .card-p4{
     margin-bottom: 64px;
 }
+
+.card-exp {
+    margin-bottom: 30px;
+}
+
+
+
 .card i{
     font-size: 3.10rem;
     text-align: center;
@@ -228,6 +276,12 @@ h5{
 .card:hover{
     transform: scale(1.1);
 }
+
+
+.box-exp li:hover{
+    transform: scale(1.1);
+}
+
 .skills{
     background-color:var(--bgcolor-2);
     padding: var(--padding);
@@ -681,4 +735,6 @@ h5{
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
   .dropdown:hover {padding-right: 20%;}
+
+
 
