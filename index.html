@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Mohamed Magdy – Senior BI & Data Governance</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/png" href="icons/portfolio.png"/>
+<link rel="icon" type="image/png" href="icons/portfolio.png"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -47,7 +47,21 @@ nav{position:sticky;top:0;z-index:100;background:var(--navy);display:flex;align-
 .stat-label{font-size:11px;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 .hero-photo-wrap{flex-shrink:0}
 .hero-photo{width:200px;height:200px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);display:block}
-.hero-photo-placeholder{width:200px;height:200px;border-radius:50%;background:rgba(198,168,87,.15);border:3px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:48px;color:var(--accent)}
+
+/* COMPANIES SCROLL STRIP */
+.strip-wrap{padding:36px 0;overflow:hidden;position:relative;background:var(--white);border-bottom:1px solid var(--border)}
+.strip-wrap::before,.strip-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.strip-wrap::before{left:0;background:linear-gradient(to right,var(--white),transparent)}
+.strip-wrap::after{right:0;background:linear-gradient(to left,var(--white),transparent)}
+.strip-label{text-align:center;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
+#scroll-track{display:flex;gap:14px;width:max-content;animation:logoscroll 32s linear infinite}
+#scroll-track:hover{animation-play-state:paused}
+@keyframes logoscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.lcard{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:140px;height:88px;border-radius:10px;border:1px solid var(--border);background:var(--white);padding:10px 16px;transition:border-color .2s}
+.lcard:hover{border-color:var(--accent)}
+.limg{width:auto;height:36px;object-fit:contain;max-width:100px}
+.lname{font-size:10px;font-weight:500;color:var(--text-muted);text-align:center;line-height:1.3;max-width:110px}
+.lbadge{font-size:8px;letter-spacing:.07em;text-transform:uppercase;padding:2px 6px;border-radius:3px;font-weight:600}
 
 /* SECTIONS */
 section{padding:72px 3rem}
@@ -67,7 +81,6 @@ section{padding:72px 3rem}
 .cert-item{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:11px 15px;display:flex;align-items:center;gap:11px}
 .cert-icon{width:30px;height:30px;background:var(--accent-light);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cert-icon svg{width:14px;height:14px;stroke:var(--accent);fill:none}
-
 .cert-title{font-size:13px;font-weight:500;color:var(--navy)}
 .cert-sub{font-size:12px;color:var(--text-muted)}
 
@@ -92,7 +105,7 @@ section{padding:72px 3rem}
 
 /* PROJECTS */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.proj-card{border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--white);transition:border-color .2s,box-shadow .2s}
+.proj-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--white);transition:border-color .2s,box-shadow .2s}
 .proj-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(198,168,87,.1)}
 .proj-org{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
 .proj-period{font-size:11px;color:var(--text-muted);margin-bottom:6px}
@@ -100,6 +113,7 @@ section{padding:72px 3rem}
 .proj-card p{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.6}
 .proj-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
 .proj-tag{background:var(--light-bg);color:var(--text-muted);border-radius:3px;padding:2px 7px;font-size:10px}
+.proj-body{padding:20px}
 
 /* RECOMMENDATIONS */
 .recs-bg{background:var(--light-bg)}
@@ -135,25 +149,18 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
 .footer-logo span{color:var(--accent)}
 
 @media(max-width:700px){
-  nav{padding:0 1.2rem}.nav-links{display:none}
-  section{padding:56px 1.4rem}.hero{padding:52px 1.4rem}
+  nav{padding:0 1.2rem}
+  .nav-links{display:none}
+  section{padding:56px 1.4rem}
+  .hero{padding:52px 1.4rem}
   .hero-inner{grid-template-columns:1fr;gap:2rem}
   .hero-photo-wrap{display:flex;justify-content:center}
   .hero-stats{gap:1.5rem}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
   .exp-item{grid-template-columns:1fr;gap:.4rem}
   footer{flex-direction:column;gap:8px;text-align:center;padding:18px 1.4rem}
-
-
-  @keyframes logoscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-#scroll-track:hover{animation-play-state:paused}
-.lcard{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:140px;height:88px;border-radius:10px;border:1px solid var(--border);background:var(--white);padding:10px 16px}
-.limg{width:auto;height:36px;object-fit:contain;max-width:100px}
-.lname{font-size:10px;font-weight:500;color:var(--text-muted);text-align:center;line-height:1.3;max-width:110px}
-.lbadge{font-size:8px;letter-spacing:.07em;text-transform:uppercase;padding:2px 6px;border-radius:3px;font-weight:600}
 }
 </style>
- 
 </head>
 <body>
 
@@ -197,11 +204,38 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <!-- Replace the src below with your actual photo path or a hosted image URL -->
-       <img class="hero-photo" src="images/Personal_img.jpg" alt="Mohamed Magdy"/>
+      <img class="hero-photo" src="images/Personal_img.jpg" alt="Mohamed Magdy"/>
     </div>
   </div>
 </section>
+
+<!-- COMPANIES SCROLL STRIP -->
+<div class="strip-wrap">
+  <p class="strip-label">Companies I've Worked With</p>
+  <div id="scroll-track">
+    <div class="lcard"><img class="limg" src="images/credit-agricole.png" alt="Crédit Agricole Egypt"/><span class="lname">Crédit Agricole Egypt</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/ejada.png" alt="EJADA Consulting"/><span class="lname">EJADA Consulting</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Consulting</span></div>
+    <div class="lcard"><img class="limg" src="images/ime.png" alt="IME"/><span class="lname">IME</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
+    <div class="lcard"><img class="limg" src="images/banque-du-caire.png" alt="Banque du Caire"/><span class="lname">Banque du Caire</span><span class="lbadge" style="background:#FBEAF0;color:#993556">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/taqa.png" alt="TAQA Arabia"/><span class="lname">TAQA Arabia</span><span class="lbadge" style="background:#E1F5EE;color:#0F6E56">Energy</span></div>
+    <div class="lcard"><img class="limg" src="images/anb.png" alt="Arab National Bank"/><span class="lname">Arab National Bank</span><span class="lbadge" style="background:#EEEDFE;color:#534AB7">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/saudi-post.png" alt="Saudi Post"/><span class="lname">Saudi Post (SPL)</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Government</span></div>
+    <div class="lcard"><img class="limg" src="images/alrajhi-takaful.png" alt="Al Rajhi Takaful"/><span class="lname">Al Rajhi Takaful</span><span class="lbadge" style="background:#FAECE7;color:#993C1D">Insurance</span></div>
+    <div class="lcard"><img class="limg" src="images/neotek.png" alt="Neotek FinTech"/><span class="lname">Neotek FinTech</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">FinTech</span></div>
+    <div class="lcard"><img class="limg" src="images/infatechs.png" alt="Infatechs"/><span class="lname">Infatechs</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="lcard"><img class="limg" src="images/credit-agricole.png" alt="Crédit Agricole Egypt"/><span class="lname">Crédit Agricole Egypt</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/ejada.png" alt="EJADA Consulting"/><span class="lname">EJADA Consulting</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Consulting</span></div>
+    <div class="lcard"><img class="limg" src="images/ime.png" alt="IME"/><span class="lname">IME</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
+    <div class="lcard"><img class="limg" src="images/banque-du-caire.png" alt="Banque du Caire"/><span class="lname">Banque du Caire</span><span class="lbadge" style="background:#FBEAF0;color:#993556">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/taqa.png" alt="TAQA Arabia"/><span class="lname">TAQA Arabia</span><span class="lbadge" style="background:#E1F5EE;color:#0F6E56">Energy</span></div>
+    <div class="lcard"><img class="limg" src="images/anb.png" alt="Arab National Bank"/><span class="lname">Arab National Bank</span><span class="lbadge" style="background:#EEEDFE;color:#534AB7">Banking</span></div>
+    <div class="lcard"><img class="limg" src="images/saudi-post.png" alt="Saudi Post"/><span class="lname">Saudi Post (SPL)</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Government</span></div>
+    <div class="lcard"><img class="limg" src="images/alrajhi-takaful.png" alt="Al Rajhi Takaful"/><span class="lname">Al Rajhi Takaful</span><span class="lbadge" style="background:#FAECE7;color:#993C1D">Insurance</span></div>
+    <div class="lcard"><img class="limg" src="images/neotek.png" alt="Neotek FinTech"/><span class="lname">Neotek FinTech</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">FinTech</span></div>
+    <div class="lcard"><img class="limg" src="images/infatechs.png" alt="Infatechs"/><span class="lname">Infatechs</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section class="about-bg" id="about">
@@ -223,40 +257,6 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
           <span class="ts-pill">8,751 LinkedIn Followers</span>
         </div>
       </div>
-
-      <!-- COMPANIES SCROLL STRIP -->
-<div style="padding:36px 0;overflow:hidden;position:relative;background:var(--white);border-bottom:1px solid var(--border)">
-  <div style="position:absolute;top:0;bottom:0;left:0;width:80px;background:linear-gradient(to right,var(--white),transparent);z-index:2;pointer-events:none"></div>
-  <div style="position:absolute;top:0;bottom:0;right:0;width:80px;background:linear-gradient(to left,var(--white),transparent);z-index:2;pointer-events:none"></div>
-  <p style="text-align:center;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px">Companies I've Worked With</p>
-  <div id="scroll-track" style="display:flex;gap:14px;width:max-content;animation:logoscroll 32s linear infinite">
-
-     <div class="lcard"><img class="limg" src="images/infatechs.png" alt="Infatechs"/><span class="lname">Infatechs</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/credit-agricole.png" alt="Crédit Agricole Egypt"/><span class="lname">Crédit Agricole Egypt</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/ejada.png" alt="EJADA Consulting"/><span class="lname">EJADA Consulting</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Consulting</span></div>
-    <div class="lcard"><img class="limg" src="images/ime.png" alt="IME"/><span class="lname">IME</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
-    <div class="lcard"><img class="limg" src="images/banque-du-caire.png" alt="Banque du Caire"/><span class="lname">Banque du Caire</span><span class="lbadge" style="background:#FBEAF0;color:#993556">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/taqa.png" alt="TAQA Arabia"/><span class="lname">TAQA Arabia</span><span class="lbadge" style="background:#E1F5EE;color:#0F6E56">Energy</span></div>
-    <div class="lcard"><img class="limg" src="images/anb.png" alt="Arab National Bank"/><span class="lname">Arab National Bank</span><span class="lbadge" style="background:#EEEDFE;color:#534AB7">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/saudi-post.png" alt="Saudi Post"/><span class="lname">Saudi Post (SPL)</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Government</span></div>
-    <div class="lcard"><img class="limg" src="images/alrajhi-takaful.svg" alt="Al Rajhi Takaful"/><span class="lname">Al Rajhi Takaful</span><span class="lbadge" style="background:#FAECE7;color:#993C1D">Insurance</span></div>
-    <div class="lcard"><img class="limg" src="images/neotek.svg" alt="Neotek FinTech"/><span class="lname">Neotek FinTech</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">FinTech</span></div>
-
-    <!-- Duplicate for seamless loop -->
-    <div class="lcard"><img class="limg" src="images/logos/infatechs.png" alt="Infatechs"/><span class="lname">Infatechs</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/credit-agricole.png" alt="Crédit Agricole Egypt"/><span class="lname">Crédit Agricole Egypt</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/ejada.png" alt="EJADA Consulting"/><span class="lname">EJADA Consulting</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Consulting</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/ime.png" alt="IME"/><span class="lname">IME</span><span class="lbadge" style="background:#FAEEDA;color:#854F0B">Technology</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/banque-du-caire.png" alt="Banque du Caire"/><span class="lname">Banque du Caire</span><span class="lbadge" style="background:#FBEAF0;color:#993556">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/taqa.png" alt="TAQA Arabia"/><span class="lname">TAQA Arabia</span><span class="lbadge" style="background:#E1F5EE;color:#0F6E56">Energy</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/anb.png" alt="Arab National Bank"/><span class="lname">Arab National Bank</span><span class="lbadge" style="background:#EEEDFE;color:#534AB7">Banking</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/saudi-post.png" alt="Saudi Post"/><span class="lname">Saudi Post (SPL)</span><span class="lbadge" style="background:#EAF3DE;color:#3B6D11">Government</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/alrajhi-takaful.png" alt="Al Rajhi Takaful"/><span class="lname">Al Rajhi Takaful</span><span class="lbadge" style="background:#FAECE7;color:#993C1D">Insurance</span></div>
-    <div class="lcard"><img class="limg" src="images/logos/neotek.png" alt="Neotek FinTech"/><span class="lname">Neotek FinTech</span><span class="lbadge" style="background:#E6F1FB;color:#185FA5">FinTech</span></div>
-  </div>
-</div>
-
-
       <div>
         <p style="font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:12px">Certifications &amp; Education</p>
         <div class="cert-list">
@@ -305,10 +305,9 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
     <h2 class="section-title">Professional Experience</h2>
     <div class="divider-line"></div>
     <div class="exp-timeline">
-
       <div class="exp-item">
         <div><div class="exp-period">Mar 2026 – Present</div><div class="exp-company">Crédit Agricole Bank<br>Cairo, Egypt · Banking</div></div>
-        <div><h3>Senior BI &amp; Analytics Engineer</h3><div class="exp-loc">Full-time</div>
+        <div class="exp-right"><h3>Senior BI &amp; Analytics Engineer</h3><div class="exp-loc">Full-time</div>
         <ul class="exp-bullets">
           <li>Led automation of the CBE 1500 regulatory report (ALM), reverse-engineering legacy OBIEE logic.</li>
           <li>Reconciled data across core banking systems and DWH; resolved discrepancies in financial instruments, interest, maturity buckets, and liquidity gaps.</li>
@@ -316,10 +315,9 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
           <li>Collaborated with Finance, Operations, and Data teams to validate business logic and regulatory requirements.</li>
         </ul></div>
       </div>
-
       <div class="exp-item">
         <div><div class="exp-period">Mar 2025 – Feb 2026</div><div class="exp-company">EJADA<br>Riyadh, Saudi Arabia · Consulting</div></div>
-        <div><h3>Data Management Specialist</h3><div class="exp-loc">Clients: ANB, Saudi Post, Neotek, Al Rajhi Takaful</div>
+        <div class="exp-right"><h3>Data Management Specialist</h3><div class="exp-loc">Clients: ANB, Saudi Post, Neotek, Al Rajhi Takaful</div>
         <ul class="exp-bullets">
           <li>Administered Informatica Axon at Arab National Bank; designed ownership &amp; stewardship models and governance KPIs.</li>
           <li>Led NDMO/NDI data classification exercise across all Saudi Post departments; delivered training workshops.</li>
@@ -327,37 +325,33 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
           <li>Executed end-to-end CRM data migration from Eska, Penta &amp; Siebel to Microsoft Dynamics 365 for Al Rajhi Takaful.</li>
         </ul></div>
       </div>
-
       <div class="exp-item">
         <div><div class="exp-period">Jul 2023 – Feb 2025</div><div class="exp-company">IME<br>Cairo, Egypt · Technology</div></div>
-        <div><h3>Data Management Engineer</h3><div class="exp-loc">Full-time</div>
+        <div class="exp-right"><h3>Data Management Engineer</h3><div class="exp-loc">Full-time</div>
         <ul class="exp-bullets">
           <li>Designed scalable data pipelines and governance policies across multiple heterogeneous data sources.</li>
           <li>Implemented data quality monitoring, metadata management, and lifecycle management frameworks.</li>
           <li>Translated business requirements into dashboards and data models aligned with organizational goals.</li>
         </ul></div>
       </div>
-
       <div class="exp-item">
         <div><div class="exp-period">Feb 2024 – Jan 2025</div><div class="exp-company">Banque du Caire<br>Cairo, Egypt · Banking</div></div>
-        <div><h3>Senior BI Engineer</h3><div class="exp-loc">Full-time</div>
+        <div class="exp-right"><h3>Senior BI Engineer</h3><div class="exp-loc">Full-time</div>
         <ul class="exp-bullets">
           <li>Migrated SAP Business Objects reports to MicroStrategy and a centralized data warehouse (FlexCube → T24/Temenos).</li>
           <li>Built dashboards for budgeting and retail MIS — customer segmentation, assets &amp; facilities portfolio.</li>
           <li>Performed source-to-target data reconciliation with DM sheet validation and flag verification.</li>
         </ul></div>
       </div>
-
       <div class="exp-item">
         <div><div class="exp-period">Jul 2022 – Jul 2023</div><div class="exp-company">TAQA Arabia<br>Cairo, Egypt · Energy</div></div>
-        <div><h3>Data Analytics &amp; Insights Analyst</h3><div class="exp-loc">Full-time</div>
+        <div class="exp-right"><h3>Data Analytics &amp; Insights Analyst</h3><div class="exp-loc">Full-time</div>
         <ul class="exp-bullets">
           <li>Built ML models (regression + deep learning) for gas consumption prediction across Egypt — 92–95% accuracy.</li>
           <li>Automated HR payroll reporting for 4 companies: reduced 6-day process to under 5 minutes via Python EXE.</li>
           <li>Delivered Power BI dashboards and integrated multi-source data pipelines for operational decisions.</li>
         </ul></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -379,15 +373,14 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
 </section>
 
 <!-- PROJECTS -->
-  <section id="projects">
+<section id="projects">
   <div class="section-inner">
     <p class="section-label">Selected Work</p>
     <h2 class="section-title">Key Projects</h2>
     <div class="projects-grid">
 
-      <!-- Crédit Agricole -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#0B2A4A;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#0B2A4A;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);align-items:flex-end;gap:3px;padding:12px 14px">
             <div style="background:rgba(198,168,87,.7);height:70px;border-radius:2px 2px 0 0"></div>
             <div style="background:rgba(198,168,87,.45);height:50px;border-radius:2px 2px 0 0"></div>
@@ -400,18 +393,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             <div style="text-align:center"><div style="font-size:14px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">CBE</div><div style="font-size:9px;color:rgba(255,255,255,.4)">1500 Report</div></div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Crédit Agricole Egypt</div>
-          <div class="proj-period">Feb 2026 – Apr 2026</div>
-          <h3>CBE 1500 Report Analysis &amp; Automation</h3>
-          <p>Led end-to-end analysis and automation of the CBE 1500 regulatory report. Reverse-engineered OBIEE logic, reconciled DWH data, and resolved ALM discrepancies in financial instruments, maturity buckets, and liquidity gaps.</p>
-          <div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Power BI</span><span class="proj-tag">SQL</span><span class="proj-tag">ALM</span><span class="proj-tag">OBIEE</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Crédit Agricole Egypt</div><div class="proj-period">Feb 2026 – Apr 2026</div><h3>CBE 1500 Report Analysis &amp; Automation</h3><p>Led end-to-end analysis and automation of the CBE 1500 regulatory report. Reverse-engineered OBIEE logic, reconciled DWH data, and resolved ALM discrepancies in financial instruments, maturity buckets, and liquidity gaps.</p><div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Power BI</span><span class="proj-tag">SQL</span><span class="proj-tag">ALM</span><span class="proj-tag">OBIEE</span></div></div>
       </div>
 
-      <!-- Arab National Bank -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#16345C;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#16345C;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px">
             <div style="display:flex;flex-direction:column;gap:6px">
               <div style="width:80px;height:7px;background:rgba(198,168,87,.6);border-radius:2px"></div>
@@ -424,18 +410,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             </div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Arab National Bank</div>
-          <div class="proj-period">Oct 2025 – Dec 2025</div>
-          <h3>Enterprise Data Governance &amp; Quality Implementation</h3>
-          <p>Implemented Informatica Axon org-wide. Designed ownership &amp; stewardship models, governed CDEs, built governance dashboards and KPIs. Managed Axon and IDQ migration from dev to production.</p>
-          <div class="proj-tags"><span class="proj-tag">Axon</span><span class="proj-tag">IDQ</span><span class="proj-tag">CDEs</span><span class="proj-tag">Data Governance</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Arab National Bank</div><div class="proj-period">Oct 2025 – Dec 2025</div><h3>Enterprise Data Governance &amp; Quality Implementation</h3><p>Implemented Informatica Axon org-wide. Designed ownership &amp; stewardship models, governed CDEs, built governance dashboards and KPIs. Managed Axon and IDQ migration from dev to production.</p><div class="proj-tags"><span class="proj-tag">Axon</span><span class="proj-tag">IDQ</span><span class="proj-tag">CDEs</span><span class="proj-tag">Data Governance</span></div></div>
       </div>
 
-      <!-- Saudi Post -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#0F3D2A;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#0F3D2A;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px">
             <div style="display:flex;flex-direction:column;gap:5px">
               <div style="font-size:10px;color:rgba(198,168,87,.9);letter-spacing:.06em">NDMO</div>
@@ -451,47 +430,24 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             </div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Saudi Post (SPL)</div>
-          <div class="proj-period">Jul 2025 – Sep 2025</div>
-          <h3>NDMO / NDI Data Classification Project</h3>
-          <p>Classified CDEs across all departments, conducted workshops, and supported IDMC/MCC for metadata scanning, lineage, and compliance monitoring.</p>
-          <div class="proj-tags"><span class="proj-tag">NDMO</span><span class="proj-tag">IDMC</span><span class="proj-tag">MCC</span><span class="proj-tag">NDI</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Saudi Post (SPL)</div><div class="proj-period">Jul 2025 – Sep 2025</div><h3>NDMO / NDI Data Classification Project</h3><p>Classified CDEs across all departments, conducted workshops, and supported IDMC/MCC for metadata scanning, lineage, and compliance monitoring.</p><div class="proj-tags"><span class="proj-tag">NDMO</span><span class="proj-tag">IDMC</span><span class="proj-tag">MCC</span><span class="proj-tag">NDI</span></div></div>
       </div>
 
-      <!-- Al Rajhi Takaful -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#3D1A0A;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#3D1A0A;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div style="font-size:10px;color:rgba(198,168,87,.8)">Eska</div>
-              <div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div style="font-size:10px;color:rgba(198,168,87,.8)">Penta</div>
-              <div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div style="font-size:10px;color:rgba(198,168,87,.8)">Siebel</div>
-              <div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div>
-            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-size:10px;color:rgba(198,168,87,.8)">Eska</div><div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-size:10px;color:rgba(198,168,87,.8)">Penta</div><div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px"><div style="font-size:10px;color:rgba(198,168,87,.8)">Siebel</div><div style="width:2px;height:18px;background:rgba(198,168,87,.4)"></div></div>
             <div style="font-size:18px;color:rgba(198,168,87,.6)">→</div>
             <div style="background:rgba(198,168,87,.15);border:1px solid rgba(198,168,87,.5);border-radius:6px;padding:6px 12px;font-size:10px;color:rgba(198,168,87,.9)">Dynamics 365</div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Al Rajhi Takaful</div>
-          <div class="proj-period">Apr 2025 – May 2025</div>
-          <h3>CRM Migration: Legacy Systems → Dynamics 365</h3>
-          <p>End-to-end migration from Eska, Penta, and Siebel with cleansing, de-duplication, audit trail, automated scheduling, and Informatica server administration.</p>
-          <div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Dynamics 365</span><span class="proj-tag">ETL</span><span class="proj-tag">Data Quality</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Al Rajhi Takaful</div><div class="proj-period">Apr 2025 – May 2025</div><h3>CRM Migration: Legacy Systems → Dynamics 365</h3><p>End-to-end migration from Eska, Penta, and Siebel with cleansing, de-duplication, audit trail, automated scheduling, and Informatica server administration.</p><div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Dynamics 365</span><span class="proj-tag">ETL</span><span class="proj-tag">Data Quality</span></div></div>
       </div>
 
-      <!-- Neotek FinTech -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#1A2A3D;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#1A2A3D;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px">
             <div style="display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;align-items:center;gap:8px"><div style="width:10px;height:10px;border-radius:50%;background:rgba(198,168,87,.7)"></div><div style="font-size:10px;color:rgba(198,168,87,.8)">Metadata Scanning</div></div>
@@ -501,18 +457,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             </div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Neotek FinTech</div>
-          <div class="proj-period">Mar 2025 – Apr 2025</div>
-          <h3>Data Governance Enablement — EDC &amp; Axon</h3>
-          <p>Deployed Informatica EDC for automated metadata harvesting and lineage. Maintained glossaries, defined policies, and assigned ownership roles aligned with NDMO guidelines.</p>
-          <div class="proj-tags"><span class="proj-tag">EDC</span><span class="proj-tag">Axon</span><span class="proj-tag">Metadata</span><span class="proj-tag">NDMO</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Neotek FinTech</div><div class="proj-period">Mar 2025 – Apr 2025</div><h3>Data Governance Enablement — EDC &amp; Axon</h3><p>Deployed Informatica EDC for automated metadata harvesting and lineage. Maintained glossaries, defined policies, and assigned ownership roles aligned with NDMO guidelines.</p><div class="proj-tags"><span class="proj-tag">EDC</span><span class="proj-tag">Axon</span><span class="proj-tag">Metadata</span><span class="proj-tag">NDMO</span></div></div>
       </div>
 
-      <!-- Banque du Caire Dashboards -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#1E1A3D;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#1E1A3D;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);align-items:flex-end;gap:4px;padding:12px 14px">
             <div style="background:rgba(198,168,87,.65);height:65px;border-radius:2px 2px 0 0"></div>
             <div style="background:rgba(198,168,87,.5);height:80px;border-radius:2px 2px 0 0"></div>
@@ -521,18 +470,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
           </div>
           <div style="position:absolute;top:10px;left:14px;font-size:10px;color:rgba(198,168,87,.75)">Budgeting · Retail KPIs</div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Banque du Caire</div>
-          <div class="proj-period">Jun 2024 – Jan 2025</div>
-          <h3>Dashboard Development for Budgeting &amp; Retail</h3>
-          <p>Designed interactive dashboards for customer segmentation, assets portfolio, and facilities portfolio. Enabled KPI monitoring for budgeting and retail operations teams.</p>
-          <div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">MicroStrategy</span><span class="proj-tag">Data Analysis</span><span class="proj-tag">KPI</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Banque du Caire</div><div class="proj-period">Jun 2024 – Jan 2025</div><h3>Dashboard Development for Budgeting &amp; Retail</h3><p>Designed interactive dashboards for customer segmentation, assets portfolio, and facilities portfolio. Enabled KPI monitoring for budgeting and retail operations teams.</p><div class="proj-tags"><span class="proj-tag">Power BI</span><span class="proj-tag">MicroStrategy</span><span class="proj-tag">Data Analysis</span><span class="proj-tag">KPI</span></div></div>
       </div>
 
-      <!-- SAP BO Migration -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#1A1E3D;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#1A1E3D;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px">
             <div style="background:rgba(198,168,87,.15);border:1px solid rgba(198,168,87,.5);border-radius:6px;padding:6px 12px;font-size:10px;color:rgba(198,168,87,.9)">SAP BO</div>
             <div style="font-size:18px;color:rgba(198,168,87,.6)">→</div>
@@ -541,18 +483,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             <div style="background:rgba(198,168,87,.15);border:1px solid rgba(198,168,87,.5);border-radius:6px;padding:6px 12px;font-size:10px;color:rgba(198,168,87,.9)">DWH</div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Banque du Caire</div>
-          <div class="proj-period">Jun 2024 – Jan 2025</div>
-          <h3>BI Migration: SAP BO → MicroStrategy &amp; DWH</h3>
-          <p>Migrated core banking reports from SAP BO to MicroStrategy. Ensured accurate data mapping, optimized performance, and integrated with existing BI infrastructure.</p>
-          <div class="proj-tags"><span class="proj-tag">MicroStrategy</span><span class="proj-tag">SAP BO</span><span class="proj-tag">DWH</span><span class="proj-tag">Reconciliation</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Banque du Caire</div><div class="proj-period">Jun 2024 – Jan 2025</div><h3>BI Migration: SAP BO → MicroStrategy &amp; DWH</h3><p>Migrated core banking reports from SAP BO to MicroStrategy. Ensured accurate data mapping, optimized performance, and integrated with existing BI infrastructure.</p><div class="proj-tags"><span class="proj-tag">MicroStrategy</span><span class="proj-tag">SAP BO</span><span class="proj-tag">DWH</span><span class="proj-tag">Reconciliation</span></div></div>
       </div>
 
-      <!-- Data Reconciliation -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#1A2810;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#1A2810;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:12px">
             <div style="display:flex;flex-direction:column;gap:8px">
               <div style="display:flex;align-items:center;gap:8px"><div style="width:36px;height:6px;background:rgba(198,168,87,.7);border-radius:2px"></div><div style="font-size:10px;color:rgba(198,168,87,.8)">Source</div></div>
@@ -562,18 +497,11 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
             </div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Banque du Caire</div>
-          <div class="proj-period">Jan 2024 – Mar 2024</div>
-          <h3>Data Reconciliation on Banking Data Migration</h3>
-          <p>Validated source-to-target mappings against DM sheets, performed accuracy checks and flag verifications, and resolved discrepancies to ensure data integrity throughout migration.</p>
-          <div class="proj-tags"><span class="proj-tag">SQL</span><span class="proj-tag">Data Reconciliation</span><span class="proj-tag">DM Sheets</span><span class="proj-tag">Data Quality</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Banque du Caire</div><div class="proj-period">Jan 2024 – Mar 2024</div><h3>Data Reconciliation on Banking Data Migration</h3><p>Validated source-to-target mappings against DM sheets, performed accuracy checks and flag verifications, and resolved discrepancies to ensure data integrity throughout migration.</p><div class="proj-tags"><span class="proj-tag">SQL</span><span class="proj-tag">Data Reconciliation</span><span class="proj-tag">DM Sheets</span><span class="proj-tag">Data Quality</span></div></div>
       </div>
 
-      <!-- Gas Consumption -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#0B2A1A;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#0B2A1A;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:grid;grid-template-columns:repeat(6,1fr);align-items:flex-end;gap:3px;padding:12px 14px">
             <div style="background:rgba(198,168,87,.5);height:55px;border-radius:2px 2px 0 0"></div>
             <div style="background:rgba(198,168,87,.65);height:78px;border-radius:2px 2px 0 0"></div>
@@ -584,78 +512,32 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
           </div>
           <div style="position:absolute;top:10px;right:12px;font-size:13px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">92–95%</div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">TAQA Arabia</div>
-          <div class="proj-period">Jan 2023 – Jun 2023</div>
-          <h3>Gas Consumption Prediction &amp; Optimization</h3>
-          <p>Built regression and deep learning models on 20 years of historical data — achieving 92–95% prediction accuracy to optimize gas distribution and reduce logistics costs across Egypt.</p>
-          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">Power BI</span><span class="proj-tag">ETL</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">TAQA Arabia</div><div class="proj-period">Jan 2023 – Jun 2023</div><h3>Gas Consumption Prediction &amp; Optimization</h3><p>Built regression and deep learning models on 20 years of historical data — achieving 92–95% prediction accuracy to optimize gas distribution and reduce logistics costs across Egypt.</p><div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">Power BI</span><span class="proj-tag">ETL</span></div></div>
       </div>
 
-      <!-- HR Payroll -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#2A1A0A;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#2A1A0A;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px">
-            <div style="text-align:center">
-              <div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">6 days</div>
-              <div style="font-size:10px;color:rgba(255,255,255,.4)">before</div>
-            </div>
+            <div style="text-align:center"><div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">6 days</div><div style="font-size:10px;color:rgba(255,255,255,.4)">before</div></div>
             <div style="font-size:22px;color:rgba(198,168,87,.5)">→</div>
-            <div style="text-align:center">
-              <div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">&lt;5 min</div>
-              <div style="font-size:10px;color:rgba(255,255,255,.4)">after</div>
-            </div>
+            <div style="text-align:center"><div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">&lt;5 min</div><div style="font-size:10px;color:rgba(255,255,255,.4)">after</div></div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">TAQA Arabia</div>
-          <div class="proj-period">Jan 2023 – Feb 2023</div>
-          <h3>Automated HR Payroll &amp; Performance System</h3>
-          <p>Transformed a 6-day, 3-person manual payroll process into a Python EXE completing in under 5 minutes — covering 4 companies with executive and individual performance dashboards.</p>
-          <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Excel</span><span class="proj-tag">Automation</span><span class="proj-tag">VBA</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">TAQA Arabia</div><div class="proj-period">Jan 2023 – Feb 2023</div><h3>Automated HR Payroll &amp; Performance System</h3><p>Transformed a 6-day, 3-person manual payroll process into a Python EXE completing in under 5 minutes — covering 4 companies with executive and individual performance dashboards.</p><div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Excel</span><span class="proj-tag">Automation</span><span class="proj-tag">VBA</span></div></div>
       </div>
 
-      <!-- CNN-GNN -->
       <div class="proj-card">
-        <div style="width:100%;height:160px;background:#2A1A3D;position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+        <div style="width:100%;height:160px;background:#2A1A3D;position:relative;overflow:hidden">
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:12px">
-            <div style="text-align:center">
-              <div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">95.7%</div>
-              <div style="font-size:10px;color:rgba(255,255,255,.4)">GCN accuracy</div>
-            </div>
+            <div style="text-align:center"><div style="font-size:26px;font-weight:600;color:#C6A857;font-family:'Playfair Display',serif">95.7%</div><div style="font-size:10px;color:rgba(255,255,255,.4)">GCN accuracy</div></div>
             <div style="width:60px;height:60px;border-radius:50%;border:2px solid rgba(198,168,87,.4);display:flex;align-items:center;justify-content:center">
               <div style="width:40px;height:40px;border-radius:50%;background:conic-gradient(rgba(198,168,87,.8) 95.7%,rgba(255,255,255,.1) 0)"></div>
             </div>
           </div>
         </div>
-        <div style="padding:20px">
-          <div class="proj-org">Ain Shams University</div>
-          <div class="proj-period">Dec 2022 – Jul 2023</div>
-          <h3>CNN-GNN Graph Breast-Fusion: Deep Learning for Cancer Classification</h3>
-          <p>Combined CNN and Graph Convolutional Networks for automated breast cancer classification in mammogram images. GCN achieved 95.7% accuracy using VGG16 embeddings and K-nearest neighbor graph construction.</p>
-          <div class="proj-tags"><span class="proj-tag">CNN</span><span class="proj-tag">GCN</span><span class="proj-tag">VGG16</span><span class="proj-tag">Python</span><span class="proj-tag">Healthcare AI</span></div>
-        </div>
+        <div class="proj-body"><div class="proj-org">Ain Shams University</div><div class="proj-period">Dec 2022 – Jul 2023</div><h3>CNN-GNN Graph Breast-Fusion: Deep Learning for Cancer Classification</h3><p>Combined CNN and Graph Convolutional Networks for automated breast cancer classification in mammogram images. GCN achieved 95.7% accuracy using VGG16 embeddings and K-nearest neighbor graph construction.</p><div class="proj-tags"><span class="proj-tag">CNN</span><span class="proj-tag">GCN</span><span class="proj-tag">VGG16</span><span class="proj-tag">Python</span><span class="proj-tag">Healthcare AI</span></div></div>
       </div>
 
-    </div>
-  </div>
-</section>
-<section id="projects">
-  <div class="section-inner">
-    <p class="section-label">Selected Work</p>
-    <h2 class="section-title">Key Projects</h2>
-    <div class="projects-grid">
-      <div class="proj-card"><div class="proj-org">Crédit Agricole Egypt</div><div class="proj-period">Feb 2026 – Apr 2026</div><h3>CBE 1500 Report Analysis &amp; Automation</h3><p>Reverse-engineered legacy OBIEE reports, reconciled data across core banking and DWH, resolved ALM discrepancies, and delivered a fully automated regulatory reporting process.</p><div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Power BI</span><span class="proj-tag">SQL</span><span class="proj-tag">ALM</span><span class="proj-tag">OBIEE</span></div></div>
-      <div class="proj-card"><div class="proj-org">Arab National Bank</div><div class="proj-period">Oct 2025 – Dec 2025</div><h3>Enterprise Data Governance &amp; Quality Implementation</h3><p>Implemented Informatica Axon organization-wide. Designed ownership models, governed CDEs, built governance dashboards and KPIs. Managed Axon and IDQ migration from dev to production.</p><div class="proj-tags"><span class="proj-tag">Axon</span><span class="proj-tag">IDQ</span><span class="proj-tag">CDEs</span><span class="proj-tag">Data Governance</span></div></div>
-      <div class="proj-card"><div class="proj-org">Saudi Post (SPL)</div><div class="proj-period">Jul 2025 – Sep 2025</div><h3>NDMO / NDI Data Classification Project</h3><p>Led classification of Critical Data Elements across all departments. Delivered training workshops, stakeholder engagement, and supported IDMC/MCC for metadata scanning and lineage monitoring.</p><div class="proj-tags"><span class="proj-tag">NDMO</span><span class="proj-tag">IDMC</span><span class="proj-tag">MCC</span><span class="proj-tag">NDI</span></div></div>
-      <div class="proj-card"><div class="proj-org">Al Rajhi Takaful</div><div class="proj-period">Apr 2025 – May 2025</div><h3>CRM Migration: Legacy Systems → Dynamics 365</h3><p>End-to-end migration from Eska, Penta, and Siebel with cleansing, de-duplication, audit trail, automated scheduling, and Informatica server administration.</p><div class="proj-tags"><span class="proj-tag">Informatica</span><span class="proj-tag">Dynamics 365</span><span class="proj-tag">ETL</span><span class="proj-tag">Data Quality</span></div></div>
-      <div class="proj-card"><div class="proj-org">Neotek FinTech</div><div class="proj-period">Mar 2025 – Apr 2025</div><h3>Data Governance Enablement — EDC &amp; Axon</h3><p>Deployed Informatica EDC for automated metadata harvesting and lineage. Maintained business glossaries, defined policies, assigned data ownership roles aligned with NDMO guidelines.</p><div class="proj-tags"><span class="proj-tag">EDC</span><span class="proj-tag">Axon</span><span class="proj-tag">Metadata</span><span class="proj-tag">NDMO</span></div></div>
-      <div class="proj-card"><div class="proj-org">Banque du Caire</div><div class="proj-period">Jun 2024 – Jan 2025</div><h3>BI Migration: SAP BO → MicroStrategy &amp; DWH</h3><p>Migrated core banking reports to MicroStrategy with accurate data mapping, performance optimization, and comprehensive reconciliation across budgeting and retail departments.</p><div class="proj-tags"><span class="proj-tag">MicroStrategy</span><span class="proj-tag">SAP BO</span><span class="proj-tag">DWH</span><span class="proj-tag">Reconciliation</span></div></div>
-      <div class="proj-card"><div class="proj-org">TAQA Arabia</div><div class="proj-period">Jan 2023 – Jun 2023</div><h3>Gas Consumption Prediction &amp; Optimization</h3><p>Built regression and deep learning models on 20 years of historical data — achieving 92–95% prediction accuracy to optimize gas distribution and reduce logistics costs across Egypt.</p><div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">Power BI</span><span class="proj-tag">ETL</span></div></div>
-      <div class="proj-card"><div class="proj-org">TAQA Arabia</div><div class="proj-period">Jan 2023 – Feb 2023</div><h3>Automated HR Payroll &amp; Performance System</h3><p>Transformed a 6-day, 3-person manual process into a Python EXE completing in under 5 minutes — covering payroll for 4 companies with executive and individual performance dashboards.</p><div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Excel</span><span class="proj-tag">Automation</span><span class="proj-tag">VBA</span></div></div>
-      <div class="proj-card"><div class="proj-org">Ain Shams University</div><div class="proj-period">Dec 2022 – Jul 2023</div><h3>CNN-GNN Graph Breast-Fusion: Deep Learning for Cancer Classification</h3><p>Combined CNN and Graph Convolutional Networks for automated breast cancer classification in mammogram images. GCN model achieved 95.7% accuracy using VGG16 embeddings and K-nearest neighbor graph construction.</p><div class="proj-tags"><span class="proj-tag">CNN</span><span class="proj-tag">GCN</span><span class="proj-tag">VGG16</span><span class="proj-tag">Python</span><span class="proj-tag">Healthcare AI</span></div></div>
     </div>
   </div>
 </section>
@@ -705,14 +587,13 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
       </div>
       <div>
         <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzdanpk" method="POST">
-  <input type="text" name="name" placeholder="Your name" required/>
-  <input type="email" name="email" placeholder="Your email" required/>
-  <input type="text" name="subject" placeholder="Subject — role, project, or consulting inquiry"/>
-  <textarea name="message" placeholder="Tell me about the opportunity or project..."></textarea>
-  <button class="btn-send" type="submit">Send Message</button>
-  <p id="form-status" style="display:none; margin-top: 12px;"></p>
-</form>
-
+          <input type="text" name="name" placeholder="Your name" required/>
+          <input type="email" name="email" placeholder="Your email" required/>
+          <input type="text" name="subject" placeholder="Subject — role, project, or consulting inquiry"/>
+          <textarea name="message" placeholder="Tell me about the opportunity or project..."></textarea>
+          <button class="btn-send" type="submit">Send Message</button>
+          <p id="form-status" style="display:none;margin-top:12px"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -722,21 +603,15 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
   <div class="footer-logo">Mohamed <span>Magdy</span></div>
   <p>© 2026 · Senior BI &amp; Data Governance Professional · Cairo, Egypt</p>
 </footer>
- <script>
+
+<script>
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
-
     try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
-      });
-
+      const res = await fetch(form.action, {method:'POST',body:data,headers:{'Accept':'application/json'}});
       if (res.ok) {
         status.textContent = "✅ Message sent! I'll get back to you soon.";
         status.style.color = 'green';
@@ -749,7 +624,6 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
       status.textContent = "❌ Network error. Please try again.";
       status.style.color = 'red';
     }
-
     status.style.display = 'block';
   });
 </script>
