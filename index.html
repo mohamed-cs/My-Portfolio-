@@ -3,14 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
 <title>Mohamed Magdy – Senior BI & Data Governance</title>
-  <meta name="description" content="Mohamed Magdy is a Senior Business Intelligence Engineer and Data Governance Consultant specializing in Power BI, Informatica, and Data Management across banking and fintech.">
-
+<meta name="description" content="Mohamed Magdy is a Senior Business Intelligence Engineer and Data Governance Consultant specializing in Power BI, Informatica, and Data Management across banking and fintech.">
 <meta name="keywords" content="Mohamed Magdy BI, Mohamed Magdy Data Engineer, Mohamed Magdy Power BI, Data Governance Egypt, BI Engineer Cairo">
-
 <meta name="author" content="Mohamed Magdy">
-
 <meta name="robots" content="index, follow">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <link rel="icon" type="image/png" href="icons/portfolio.png"/>
@@ -123,6 +119,21 @@ section{padding:72px 3rem}
 .proj-tag{background:var(--light-bg);color:var(--text-muted);border-radius:3px;padding:2px 7px;font-size:10px}
 .proj-body{padding:20px}
 
+/* SERVICES */
+.services-bg{background:var(--light-bg)}
+.serv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:3rem}
+.serv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:22px;transition:border-color .2s,box-shadow .2s}
+.serv-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(198,168,87,.1)}
+.serv-icon{width:44px;height:44px;background:var(--accent-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.serv-title{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px}
+.serv-desc{font-size:12px;color:var(--text-mid);font-weight:300;line-height:1.7;margin-bottom:14px}
+.serv-pills{display:flex;flex-wrap:wrap;gap:5px}
+.serv-pill{background:var(--accent-dim);color:var(--accent);border:1px solid rgba(198,168,87,.25);border-radius:3px;padding:2px 8px;font-size:10px;font-weight:500}
+.serv-cta{background:var(--navy);border-radius:var(--radius);padding:36px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.serv-cta-label{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.serv-cta-title{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--white);margin-bottom:6px}
+.serv-cta-sub{font-size:13px;color:rgba(255,255,255,.55);font-weight:300}
+
 /* RECOMMENDATIONS */
 .recs-bg{background:var(--light-bg)}
 .recs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
@@ -166,11 +177,12 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
   .hero-stats{gap:1.5rem}
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}
   .exp-item{grid-template-columns:1fr;gap:.4rem}
+  .serv-cta{flex-direction:column;padding:24px}
   footer{flex-direction:column;gap:8px;text-align:center;padding:18px 1.4rem}
 }
 </style>
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -198,6 +210,7 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#recommendations">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -217,9 +230,8 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
         <span class="tag">ETL / DWH</span>
         <span class="tag">NDMO &amp; PDPL Compliance</span>
         <span class="tag">Power BI · Tableau · MicroStrategy</span>
-        <span class="tag">Informatica Suite (Power Center ·Axon · EDC · IDQ ) </span>
-        <span class="tag">IDMC Suite (CDI · CDGC · CDQ ) </span>
-        
+        <span class="tag">Informatica Suite (Power Center · Axon · EDC · IDQ)</span>
+        <span class="tag">IDMC Suite (CDI · CDGC · CDQ)</span>
       </div>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View My Work</a>
@@ -229,7 +241,7 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
         <div><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
         <div><div class="stat-num">14+</div><div class="stat-label">Projects Delivered</div></div>
         <div><div class="stat-num">6+</div><div class="stat-label">Enterprise Clients</div></div>
-        <div><div class="stat-num">8</div><div class="stat-label">LinkedIn Recommendations</div></div>
+        <div><div class="stat-num">9</div><div class="stat-label">LinkedIn Recommendations</div></div>
       </div>
     </div>
     <div class="hero-photo-wrap">
@@ -571,6 +583,140 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <p class="section-label">Freelance &amp; Consulting</p>
+    <h2 class="section-title">How I Can Help You</h2>
+    <div class="divider-line"></div>
+    <div class="serv-grid">
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 10l3 3 3-3 4 4"/></svg>
+        </div>
+        <h3 class="serv-title">BI Dashboards &amp; Reports</h3>
+        <p class="serv-desc">Interactive dashboards and reports tailored to your business KPIs — built in Power BI, Tableau, MicroStrategy, or Excel. From data connection to final delivery.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Power BI</span>
+          <span class="serv-pill">Tableau</span>
+          <span class="serv-pill">MicroStrategy</span>
+          <span class="serv-pill">Excel</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3 class="serv-title">Task &amp; Process Automation</h3>
+        <p class="serv-desc">Turn repetitive manual workflows into fully automated solutions — Python scripts, Excel macros, scheduled jobs, and end-to-end pipeline automation that saves hours every week.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Python</span>
+          <span class="serv-pill">VBA / Macros</span>
+          <span class="serv-pill">ETL Pipelines</span>
+          <span class="serv-pill">Scheduling</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v4c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 9v4c0 1.66 4.03 3 9 3s9-1.34 9-3V9"/><path d="M3 13v4c0 1.66 4.03 3 9 3s9-1.34 9-3v-4"/></svg>
+        </div>
+        <h3 class="serv-title">Data Engineering &amp; ETL</h3>
+        <p class="serv-desc">Design and build robust data pipelines, warehouses, and integration workflows that consolidate your data from multiple sources into a single clean, reliable foundation.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">SQL / PL-SQL</span>
+          <span class="serv-pill">Informatica</span>
+          <span class="serv-pill">SSIS</span>
+          <span class="serv-pill">DWH Design</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><path d="M12 2a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/><path d="M12 14a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4"/><path d="M2 8a4 4 0 0 1 4 4 4 4 0 0 1-4-4"/><path d="M18 8a4 4 0 0 1 4 4 4 4 0 0 1-4-4"/></svg>
+        </div>
+        <h3 class="serv-title">Machine Learning &amp; AI</h3>
+        <p class="serv-desc">Predictive models, forecasting engines, and AI-powered tools built for real business problems — from demand prediction and customer segmentation to deep learning applications.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Regression Models</span>
+          <span class="serv-pill">Deep Learning</span>
+          <span class="serv-pill">Forecasting</span>
+          <span class="serv-pill">NLP / CV</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3 class="serv-title">Advanced Excel Solutions</h3>
+        <p class="serv-desc">Complex Excel models, dynamic dashboards, financial templates, automated reports, and custom formulas — turning plain spreadsheets into powerful business tools.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Power Query</span>
+          <span class="serv-pill">Pivot Tables</span>
+          <span class="serv-pill">Dynamic Dashboards</span>
+          <span class="serv-pill">VBA</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="serv-title">Data Governance Consulting</h3>
+        <p class="serv-desc">End-to-end governance framework design — data ownership models, metadata management, data quality standards, business glossaries, and regulatory compliance aligned with NDMO and PDPL.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">NDMO / PDPL</span>
+          <span class="serv-pill">Data Quality</span>
+          <span class="serv-pill">Metadata Mgmt</span>
+          <span class="serv-pill">Informatica Axon</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="serv-title">Training &amp; Mentoring</h3>
+        <p class="serv-desc">One-on-one or group sessions covering Power BI, SQL, Python, data governance, and BI career guidance — tailored for beginners, trainees, or professionals upskilling in the data field.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Power BI Training</span>
+          <span class="serv-pill">SQL Coaching</span>
+          <span class="serv-pill">Career Guidance</span>
+          <span class="serv-pill">1-on-1 Sessions</span>
+        </div>
+      </div>
+
+      <div class="serv-card">
+        <div class="serv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.6" width="24" height="24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="serv-title">Data Strategy Consultation</h3>
+        <p class="serv-desc">Advisory sessions for startups and SMEs on building a solid data foundation — tool selection, architecture decisions, governance roadmaps, and actionable data strategies that scale.</p>
+        <div class="serv-pills">
+          <span class="serv-pill">Strategy Sessions</span>
+          <span class="serv-pill">Tool Selection</span>
+          <span class="serv-pill">Architecture Review</span>
+          <span class="serv-pill">Roadmapping</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="serv-cta">
+      <div>
+        <p class="serv-cta-label">Ready to work together?</p>
+        <p class="serv-cta-title">Let's build something great with your data.</p>
+        <p class="serv-cta-sub">Available for freelance projects, consulting engagements, and training sessions.</p>
+      </div>
+      <a href="#contact" class="btn-primary" style="white-space:nowrap;flex-shrink:0">Get a Free Consultation</a>
+    </div>
+
+  </div>
+</section>
+
 <!-- RECOMMENDATIONS -->
 <section class="recs-bg" id="recommendations">
   <div class="section-inner">
@@ -578,7 +724,7 @@ footer p{color:rgba(255,255,255,.35);font-size:12px}
     <h2 class="section-title">What Colleagues Say</h2>
     <div class="recs-grid">
 
-      <div class="rec-card"><div class="rec-quote">"</div><p class="rec-text">I had the pleasure of working with Mohamed Magdy at Ejada. Mohamed consistently demonstrated exceptional skills in data management, efficiently driving projects and improving team productivity.</p><div class="rec-author"><div class="rec-avatar">ME</div><div><div class="rec-name">Moustafa El-Alfy</div><div class="rec-role">Data Governance Team lead and Technical Project Manager, Ejada · Managed Mohamed directly</div></div></div></div>
+      <div class="rec-card"><div class="rec-quote">"</div><p class="rec-text">I had the pleasure of working with Mohamed Magdy at Ejada. Mohamed consistently demonstrated exceptional skills in data management, efficiently driving projects and improving team productivity.</p><div class="rec-author"><div class="rec-avatar">ME</div><div><div class="rec-name">Moustafa El-Alfy</div><div class="rec-role">Data Governance Team Lead &amp; Technical Project Manager, Ejada · Managed Mohamed directly</div></div></div></div>
 
       <div class="rec-card"><div class="rec-quote">"</div><p class="rec-text">I had the pleasure of partnering with Mohamed Magdy on the MicroStrategy integration project, and he was easily one of the strongest contributors on the team. His technical depth across SQL, Python, and DAX modeling is genuinely impressive — he handled complex data logic with the kind of rigor that saves a project weeks of rework. What sets him apart is that he pairs that technical skill with real business sense: he listens to stakeholders, translates fuzzy requirements into clean deliverables, and pushes back thoughtfully when something doesn't make sense. Any data team would be lucky to have him.</p><div class="rec-author"><div class="rec-avatar">SG</div><div><div class="rec-name">Samer Girgis</div><div class="rec-role">Senior Operations &amp; Data Analysis Professional, Banque du Caire · Managed Mohamed directly</div></div></div></div>
 
